@@ -12,8 +12,8 @@ This project aims to implement a cloud-based peer-to-peer(P2P) environment for i
 
 ## Usage
 This project consists of 3 interconnected servers to implement leader election for client requests, load balancing, and fault tolerance. This serves as a cloud that the user application communicates with. On the other hand, the project offers the following use cases for the user:
-### **Register**  
-The user registers to the cloud and receives a globally unique ID.
+### **Register:** Get a globally unique ID upon registration.
+
 1. **Register** to the cloud and the user gets a globally unique ID.
 2. **Sign-in** to the could using his unique ID, and if there are any image access rights updates, they would be enforced as soon as they sign in.
 3. **Encrypt Image** by entering the image path, and then the image is sent to the cloud for being encoded on a default image, and then the encoded image is returned.
