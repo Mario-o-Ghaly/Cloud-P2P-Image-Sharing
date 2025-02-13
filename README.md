@@ -4,6 +4,7 @@
 - [Description](#Description)
 - [Features](#Features)
 - [Design Choices](#Design-Choices)
+- [Team Members](#Team-Members)
 
 ## Description
 This project aims to implement a cloud-based peer-to-peer(P2P) environment for image encryption and sharing, emphasizing transparency, load balancing, fault tolerance, and P2P communication. The cloud simply consists of 3 interconnected servers communicating with each other P2P to support leader election, load balancing, and fault tolerance in handling client requests. Moreover, the cloud is associated with a user-oriented discovery service to keep track of active users and the images they offer for sharing. On the other hand, the client side's high-level objective is simply to control image exchange with other clients through ownership and viewer rights.
@@ -26,3 +27,9 @@ This project aims to implement a cloud-based peer-to-peer(P2P) environment for i
 - **Serialization**: JSON for metadata and image chunking for image transfer.
 - **Coding Framework**: Tokio crate for asynchronous UDP communication.
 - **Encryption**: Steganography for image and access rights encoding.
+
+## Team Members
+- Mario Ghaly - https://github.com/Mario-o-Ghaly
+- Ahmed Amr Salah - https://github.com/ahmed-amr-salah
+- Amna Elsaqa - https://github.com/Amna-Elsaqa
+- Hamza Algobba - https://github.com/Hamza-algobba
