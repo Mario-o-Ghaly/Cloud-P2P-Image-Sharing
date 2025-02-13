@@ -40,8 +40,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Server settings
     let local_addr: SocketAddr = "10.7.19.117:8081".parse().unwrap();
     let peer_addresses = vec![
-        // "10.7.19.117:8085".parse().unwrap(),
-        // "10.7.19.18:8085".parse().unwrap(),
+        "10.7.19.117:8085".parse().unwrap(),
+        "10.7.19.18:8085".parse().unwrap(),
     ];
 
     // Connect to the database
