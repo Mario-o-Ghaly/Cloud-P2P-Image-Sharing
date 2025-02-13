@@ -161,14 +161,6 @@ pub async fn send_encrypted_image_back(socket: &UdpSocket, client_addr: SocketAd
 }
 
 
-// -------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------
-// This function is erroneus because of the naming of image_path... 
-// Instead, the image ID should be used or a random name...
-// Because if 2 photos encrypted at the same time, they would overwrite each other.
-// -------------------------------------------------------------------------------------------
-// -------------------------------------------------------------------------------------------
-
 pub async fn handle_client(socket: Arc<UdpSocket>, client_addr: SocketAddr, image_id: String) -> io::Result<()> {
     let (chunks, _) = receive_image_over_udp(&socket).await?;
 
