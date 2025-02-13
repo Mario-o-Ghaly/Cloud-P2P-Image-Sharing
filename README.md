@@ -5,10 +5,11 @@
 - [Usage](#Usage)
 - [Features](#Features)
 - [Design Choices](#Design-Choices)
+- [How to Compile and Run](#How-to-Compile-and-Run)
 - [Team Members](#Team-Members)
 
 ## Description
-This project aims to implement a cloud-based peer-to-peer(P2P) environment for image encryption and sharing, emphasizing transparency, load balancing, fault tolerance, and P2P communication. The cloud simply consists of 3 interconnected servers communicating with each other P2P to support leader election, load balancing, and fault tolerance in handling client requests. Moreover, the cloud is associated with a user-oriented discovery service to keep track of active users and the images they offer for sharing. On the other hand, the client side's high-level objective is simply to control image exchange with other clients through ownership and viewer rights.
+This project aims to implement a cloud-based peer-to-peer(P2P) environment for image encryption and sharing, emphasizing transparency, load balancing, fault tolerance, and P2P communication. The cloud simply consists of 3 interconnected servers communicating with each other P2P to support leader election, load balancing, and fault tolerance in handling client requests. Moreover, the cloud is associated with a user-oriented discovery service to keep track of active users and the images they offer for sharing. On the other hand, the client side's high-level objective is simply to control image exchange with other clients through ownership and viewer rights. Also, the client-side multicasts each request to the three servers.
 
 ## Usage
 This project consists of 3 interconnected servers to implement leader election for client requests, load balancing, and fault tolerance. This serves as a cloud that the user application communicates with. On the other hand, the project offers the following use cases for the user:
@@ -54,6 +55,35 @@ to the cloud and the user gets a globally unique ID.
 - **Coding Framework**: Tokio crate for asynchronous UDP communication.
 - **Communication**: UDP in server-to-server, client-to-server, and server-to-client communications
 - **Encryption**: Steganography for image and access rights encoding.
+
+## How to Compile and Run
+This repo structure has a branch for the **server-side** and a branch for the **client-side**.
+
+### Server
+- Clone the repo
+- Navigate to `src` folder, and inside `main.rs`, manually change the socket addresses of the 3 servers(IP address concatenated with port number). The code has this:  
+```
+const HEARTBEAT_PORT: u16 = 8085
+```
+
+```
+// Server settings
+let local_addr: SocketAddr = "10.7.19.117:8081".parse().unwrap();
+let peer_addresses = vec![
+    "10.7.19.117:8085".parse().unwrap(),
+    "10.7.19.18:8085".parse().unwrap(),
+  ];
+```   
+>> `HEARTBEAT_PORT` is the port number of the server at hand used for sending and listening to peer servers' heartbeats.  
+>> `local_addr` is the IP address of the server at hand concatenated with the port number used for listening to client requests.  
+>> `peer_addresses` is the vector of peer IP addresses concatenated with the port number used for heartbeats.  
+- Navigate to `src` folder and write `cargo build` then `cargo run`
+
+_Note that >> the **listening port** for all servers should be the **same** since the client sends always to the **same port number**._
+
+### Client
+- Clone the repo
+- Navigate to `src` folder, and inside `.env`, manually change the server IPs (and listening port of all servers if necessary)
 
 ## Team Members
 - Mario Ghaly - https://github.com/Mario-o-Ghaly
