@@ -15,24 +15,24 @@ This project consists of 3 interconnected servers to implement leader election f
 1. **_Register_**  
 to the cloud and the user gets a globally unique ID.
   
-3. **_Sign-in_**  
+2. **_Sign-in_**  
    to the could using his unique ID, and if there are any image access rights updates, they would be enforced as soon as they sign in.
    
-5. **_Encrypt Image_**  
+3. **_Encrypt Image_**  
    by entering the image path, and then the image is sent to the cloud for being encoded on a default image, and then the encoded image is returned.
-6. **_Request a List of Active Users & Their Images_**  
+4. **_Request a List of Active Users & Their Images_**  
    so that the user can know what else is being offered.
-7. **_Request Image_**  
+5. **_Request Image_**  
    from a user by entering from the list the client's number, image ID, and requested number of views.
-8. **_View Client Requests_**  
+6. **_View Client Requests_**  
    which are queued whenever a peer user requests an image from them, and the owner then chooses to see what has been requested, and whether to accept or reject the request.
-9. **_View Peer Images_**  
+7. **_View Peer Images_**  
    which are images requested from other peers and accepted for specific access rights. When the permitted number of views goes to 0, the default image is shown. 
-10. **_Request Additional Views_**  
+8. **_Request Additional Views_**  
    for a peer image whose request has been accepted and received already. If the requester goes down, the peer would notify the cloud with the updated access rights and the requester details so that when the requester goes up again, the cloud would enforce them when they sign in.
-11. **_Enforce Access Rights Updates_**  
+9. **_Enforce Access Rights Updates_**  
    by making the owner of an image change the already given number of views for an image to a peer user.
-12. **_Shut down_**  
+10. **_Shut down_**  
    properly by notifying the cloud.
 
 ## Features
