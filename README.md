@@ -24,13 +24,13 @@ to the cloud and the user gets a globally unique ID.
    from a user by entering from the list the client's number, image ID, and requested number of views.
 6. **View Client Requests**  
    which are queued whenever a peer user requests an image from them, and the owner then chooses to see what has been requested, and whether to accept or reject the request.
-7.**View Peer Images**  
+7. **View Peer Images**  
    which are images requested from other peers and accepted for specific access rights. When the permitted number of views goes to 0, the default image is shown. 
-8.**Request Additional Views**  
+8. **Request Additional Views**  
    for a peer image whose request has been accepted and received already. If the requester goes down, the peer would notify the cloud with the updated access rights and the requester details so that when the requester goes up again, the cloud would enforce them when they sign in.
-9.**Enforce Access Rights Updates**  
+9. **Enforce Access Rights Updates**  
    by making the owner of an image change the already given number of views for an image to a peer user.
-10.**Shut down**  
+10. **Shut down**  
    properly by notifying the cloud.
 
 ## Features
